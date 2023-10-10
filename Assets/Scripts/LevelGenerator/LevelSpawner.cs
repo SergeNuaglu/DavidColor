@@ -4,22 +4,22 @@ using UnityEngine;
 public class LevelSpawner : MonoBehaviour
 {
     [SerializeField] private int _levelNumber;
-    [SerializeField] private List<LevelConfig> _levels;
+    [SerializeField] private List<LevelConfig> _levelsConfigs;
     [SerializeField] private EnvironmentSetter _environmentSetter;
     [SerializeField] private BowlSpawner _bowlSpawner;
     [SerializeField] private PlatformSpawner _platformSpawner;
 
     private void Awake()
     {
-        foreach (var level in _levels)
+        foreach (var levelConfig in _levelsConfigs)
         {
-            if (level.LevelNumber == _levelNumber)
+            if (levelConfig.LevelNumber == _levelNumber)
             {
-                _environmentSetter.Set(level);
+                _environmentSetter.Set(levelConfig);
+                _bowlSpawner.Spawn(levelConfig);
+                _platformSpawner.Spawn(levelConfig);
+                return;
             }
         }
-
-        _bowlSpawner.Spawn();
-        _platformSpawner.Spawn();
     }
 }

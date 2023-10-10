@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,16 +21,18 @@ public class MovesHolder : ScriptableObject
 
     private void OnValidate()
     {
+        CheckArrayLength(_bowlMoveColors);
+        CheckArrayLength(_davidMoveColors);
+        CheckArrayLength(_bowlMoveArrangements);
+    }
+
+    private void CheckArrayLength(Array checkingArray)
+    {
         int nullMoveCount = 1;
 
-        if (_bowlMoveColors.Length != _moveCount + nullMoveCount)
+        if (checkingArray.Length != _moveCount + nullMoveCount)
         {
-            _bowlMoveColors = new MoveColorData[_moveCount + nullMoveCount];
-        }
-
-        if (_bowlMoveArrangements.Length != _moveCount + nullMoveCount)
-        {
-            _bowlMoveArrangements = new Arrangement[_moveCount + nullMoveCount];
+            checkingArray = new MoveColorData[_moveCount + nullMoveCount];
         }
     }
 }
