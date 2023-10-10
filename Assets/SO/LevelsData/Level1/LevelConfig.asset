@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4437389f6a01c14479f68eb0f13e2243, type: 3}
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
+  _levelNumber: 1
+  _environmentMaterial: {fileID: 2100000, guid: 5f4e46effeded674384550bf8573f338, type: 2}
+  _building: {fileID: 3209262200207624879, guid: 3502b99839d9c5048bc061aa0f81d5ea, type: 3}
   _circleStepCount: 12
   _platformCount: 1
   _bowlCount: 1

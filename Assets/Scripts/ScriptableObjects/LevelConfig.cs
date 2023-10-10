@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LevelConfig : ScriptableObject
 {
+    [SerializeField] private int _levelNumber;
+    [SerializeField] private Material _environmentMaterial;
+    [SerializeField] private GameObject _building;
     [SerializeField] private int _circleStepCount;
     [SerializeField] private int _platformCount;
     [SerializeField] private int _bowlCount;
@@ -12,6 +15,9 @@ public class LevelConfig : ScriptableObject
     [SerializeField] private MoveColorData _platformColorData;
     [SerializeField] private MovesHolder _moveHolder;
 
+    public int LevelNumber => _levelNumber;
+    public Material EnvironmentMaterial => _environmentMaterial;
+    public GameObject Building => _building;
     public int CircleStepCount => _circleStepCount;
     public Arrangement PlatformArrangement => _platformArrangement;
     public Arrangement BowlArrangement => _moveHolder.BowlMoveArrangements[0];

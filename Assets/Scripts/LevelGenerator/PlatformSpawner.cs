@@ -9,12 +9,12 @@ public class PlatformSpawner : CircleItemSpawner
     private MoveColorData _davidColorData;
     private Arrangement _platformArrangementData;
 
-    protected override void Awake()
+    public override void Spawn()
     {
         _platformColorData = LevelConfig.PlatformColorData;
         _davidColorData = LevelConfig.DavidColorData;
         _platformArrangementData = LevelConfig.PlatformArrangement;
-        base.Awake();
+        base.Spawn();
     }
 
     protected override void TryInstantiateItem(GameObject template, int stepNumber)

@@ -5,11 +5,11 @@ public class BowlSpawner : CircleItemSpawner
     private MoveColorData _colorData;
     private Arrangement _arrangementData;
 
-    protected override void Awake()
+    public override void Spawn()
     {
         _colorData = LevelConfig.BowlColorData;
         _arrangementData = LevelConfig.BowlArrangement;
-        base.Awake();
+        base.Spawn();
     }
 
     protected override void TryInstantiateItem(GameObject template, int stepNumber)

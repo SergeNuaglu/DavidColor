@@ -385,7 +385,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1fa9013458c276d4ab16532f3c2dce48, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -459,8 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a3741cb9d88b249b7fca3a1610f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelConfig: {fileID: 0}
-  _itemTemplate: {fileID: 0}
+  _levelConfig: {fileID: 11400000, guid: 215638df68a1c8845b1f4bd003b0b324, type: 2}
+  _itemTemplate: {fileID: 6241949576461161017, guid: 46fe1b14f2f8c9a4280b07fa254fb743, type: 3}
   _circle: {fileID: 1556241918}
   _bawlDistance: 2.4
   _positionY: -9.4
@@ -508,8 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61135de5b464a04d81f2603b531e70e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelConfig: {fileID: 0}
-  _itemTemplate: {fileID: 0}
+  _levelConfig: {fileID: 11400000, guid: 215638df68a1c8845b1f4bd003b0b324, type: 2}
+  _itemTemplate: {fileID: 388692579381130971, guid: 7f2c105022c749b4ab0e6b37ad11a19a, type: 3}
   _circle: {fileID: 1556241918}
 --- !u!1 &1271690793
 GameObject:
@@ -553,6 +553,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1466962747}
+  - component: {fileID: 1466962749}
+  - component: {fileID: 1466962748}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -578,6 +580,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466962748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466962746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d639b7a500140c04391f3249b61cb591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundRenderer: {fileID: 992234699}
+  _container: {fileID: 1466962747}
+--- !u!114 &1466962749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466962746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0b822cb760b5041b279ef5c60457d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelNumber: 1
+  _levels:
+  - {fileID: 11400000, guid: 215638df68a1c8845b1f4bd003b0b324, type: 2}
+  _environmentSetter: {fileID: 1466962748}
+  _bowlSpawner: {fileID: 1228262792}
+  _platformSpawner: {fileID: 1143233461}
 --- !u!1 &1556241916
 GameObject:
   m_ObjectHideFlags: 0

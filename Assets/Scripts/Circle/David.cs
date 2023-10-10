@@ -2,7 +2,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
-
 public class David : MonoBehaviour, IColoredItem
 {
     private Renderer _renderer;
