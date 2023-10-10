@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4437389f6a01c14479f68eb0f13e2243, type: 3}
+  m_Name: LevelConfig
+  m_EditorClassIdentifier: 
+  _levelNumber: 3
+  _environmentMaterial: {fileID: 2100000, guid: a73d092e51289874ca82872ced458e49, type: 2}
+  _building: {fileID: 3209262200207624879, guid: 3502b99839d9c5048bc061aa0f81d5ea, type: 3}
+  _circleStepCount: 12
+  _platformCount: 3
+  _bowlCount: 2
+  _platformArrangement: {fileID: 11400000, guid: ea372950debf6a64ebe5e1f9b709f434, type: 2}
+  _secretPlatformArrangement: {fileID: 11400000, guid: 6639398820e96b8449814299d8f76f34, type: 2}
+  _platformColorData: {fileID: 11400000, guid: 2f12c44d91f09ba42a2e0ff9d4838a0b, type: 2}
+  _moveHolder: {fileID: 11400000, guid: cb7917e6bad6b8946b60cc8830fc5b36, type: 2}
