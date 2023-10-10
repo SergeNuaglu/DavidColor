@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4437389f6a01c14479f68eb0f13e2243, type: 3}
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
-  _levelNumber: 1
-  _environmentMaterial: {fileID: 2100000, guid: a73d092e51289874ca82872ced458e49, type: 2}
-  _building: {fileID: 3209262200207624879, guid: 3502b99839d9c5048bc061aa0f81d5ea, type: 3}
+  _levelNumber: 2
+  _environmentMaterial: {fileID: 2100000, guid: 5f4e46effeded674384550bf8573f338, type: 2}
+  _building: {fileID: 2758611671387204599, guid: 236f64f28d1acef4c8853adbdddb5c87, type: 3}
   _circleStepCount: 12
-  _platformCount: 1
+  _platformCount: 2
   _bowlCount: 1
   _platformArrangement: {fileID: 11400000, guid: 70e0a70122cd46649932f93b799acdb0, type: 2}
   _secretPlatformArrangement: {fileID: 11400000, guid: 2330bec7437c3dd47b6ce5a009a8262b, type: 2}
