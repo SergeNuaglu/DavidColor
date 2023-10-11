@@ -5,9 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Renderer))]
 public class David : MonoBehaviour, IColoredItem, IFreezable
 {
-    [SerializeField] private ParticleSystem _freezeActivateEffect;
-    [SerializeField] private Transform _hammerParent;
-    [SerializeField] private Transform _glassesParent;
+    [SerializeField] private Hammer _hammer;
 
     private Renderer _renderer;
     private Animator _animator;
@@ -16,13 +14,23 @@ public class David : MonoBehaviour, IColoredItem, IFreezable
 
     public ItemColor CurrentColor { get; private set; }
     public bool IsFreezed { get; private set; }
-    public Transform HammerParent => _hammerParent;
-    public Transform GlassesParent => _glassesParent;
+
+    private void OnEnable()
+    {
+        _hammer.BowlHit += OnBowlHit;
+        _hammer.BowlIsFreezing += OnBowlFreezing;
+    }
 
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
         _animator = GetComponent<Animator>();
+    }
+
+    private void OnDisable()
+    {
+        _hammer.BowlHit -= OnBowlHit;
+        _hammer.BowlIsFreezing -= OnBowlFreezing;
     }
 
     public bool IsAnimationPlaying(string animationName)
@@ -66,5 +74,22 @@ public class David : MonoBehaviour, IColoredItem, IFreezable
     public void CelebrateVictory()
     {
         _animator.Play(AnimatorDavidController.States.Victory);
+    }
+
+    private void OnBowlHit(IColoredItem colorItem)
+    {
+        ExchangeColors(colorItem);
+    }
+
+    private void OnBowlFreezing()
+    {
+        Freeze();
+    }
+
+    private void ExchangeColors(IColoredItem colorItem)
+    {
+        ItemColor tempColor = CurrentColor;
+        SetItemColor(colorItem.CurrentColor);
+        colorItem.SetItemColor(tempColor);
     }
 }
