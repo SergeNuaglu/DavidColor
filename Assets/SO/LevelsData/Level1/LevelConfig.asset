@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
   _levelNumber: 1
-  _environmentMaterial: {fileID: 2100000, guid: 5f4e46effeded674384550bf8573f338, type: 2}
+  _environmentMaterial: {fileID: 2100000, guid: a73d092e51289874ca82872ced458e49, type: 2}
   _building: {fileID: 3209262200207624879, guid: 3502b99839d9c5048bc061aa0f81d5ea, type: 3}
   _circleStepCount: 12
   _platformCount: 1
   _bowlCount: 1
-  _platformArrangement: {fileID: 11400000, guid: 70e0a70122cd46649932f93b799acdb0, type: 2}
-  _secretPlatformArrangement: {fileID: 11400000, guid: 2330bec7437c3dd47b6ce5a009a8262b, type: 2}
-  _platformColorData: {fileID: 11400000, guid: b8a769c6c8e0f194aa10dd055b4f3334, type: 2}
-  _moveHolder: {fileID: 11400000, guid: 4103c3185d1b0de438f505f9507f8170, type: 2}
+  _platformArrangement: {fileID: 11400000, guid: 0a8f3cb53e9d86245906b3ee1b48fed8, type: 2}
+  _secretPlatformArrangement: {fileID: 11400000, guid: 1c9e14b201cf0104eb866d01b6312ab7, type: 2}
+  _platformColorData: {fileID: 11400000, guid: 249d116ad0b94eb438d37c57c2f222c1, type: 2}
+  _moveHolder: {fileID: 11400000, guid: 80f512ee265c0754db9b98bdec222031, type: 2}
