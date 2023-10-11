@@ -8,19 +8,24 @@ public class PlatformSpawner : CircleItemSpawner
     private MoveColorData _platformColorData;
     private MoveColorData _davidColorData;
     private Arrangement _platformArrangementData;
+    private LevelConfig _currentLevelConfig;
 
-    public override void Spawn()
+    public override void Spawn(LevelConfig currentLevelConfig)
     {
-        _platformColorData = LevelConfig.PlatformColorData;
-        _davidColorData = LevelConfig.DavidColorData;
-        _platformArrangementData = LevelConfig.PlatformArrangement;
-        base.Spawn();
+        _currentLevelConfig = currentLevelConfig;
+        _platformColorData = currentLevelConfig.PlatformColorData;
+        _davidColorData = currentLevelConfig.DavidColorData;
+        _platformArrangementData = currentLevelConfig.PlatformArrangement;
+        base.Spawn(currentLevelConfig);
     }
 
     protected override void TryInstantiateItem(GameObject template, int stepNumber)
     {
         Vector3 spawnPosition;
+        if (stepNumber == 3)
+        {
 
+        }
         if (_platformArrangementData.Data[stepNumber])
         {
             spawnPosition = GetSpawnPosition(stepNumber, _positionY, _bawlDistance);
@@ -30,7 +35,7 @@ public class PlatformSpawner : CircleItemSpawner
             {
                 platform.Init(Circle);
 
-                if (LevelConfig.SecretPlatformArrangement.Data[Counter])
+                if (_currentLevelConfig.SecretPlatformArrangement.Data[Counter])
                 {
                     platform.BecameSecret();
                 }

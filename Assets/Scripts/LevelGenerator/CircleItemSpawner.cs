@@ -2,7 +2,6 @@ using UnityEngine;
 
 public abstract class CircleItemSpawner : MonoBehaviour
 {
-    [SerializeField] private LevelConfig _levelConfig;
     [SerializeField] private GameObject _itemTemplate;
     [SerializeField] private Circle _circle;
 
@@ -11,14 +10,13 @@ public abstract class CircleItemSpawner : MonoBehaviour
     protected int Counter;
 
     public Circle Circle => _circle;
-    public LevelConfig LevelConfig => _levelConfig;
 
-    public virtual void Spawn()
+    public virtual void Spawn(LevelConfig currentLevelConfig)
     {
-        _stepSize = (_circle.ArcAngle * Mathf.Deg2Rad) / _levelConfig.CircleStepCount;
+        _stepSize = (_circle.ArcAngle * Mathf.Deg2Rad) / currentLevelConfig.CircleStepCount;
         Circle.SetStepSize(_stepSize);
 
-        for (int i = 0; i < _levelConfig.CircleStepCount; i++)
+        for (int i = 0; i < currentLevelConfig.CircleStepCount; i++)
         {
             TryInstantiateItem(_itemTemplate, i);
         }
