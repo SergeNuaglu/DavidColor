@@ -21,4 +21,4 @@ MonoBehaviour:
   _platformArrangement: {fileID: 11400000, guid: 70e0a70122cd46649932f93b799acdb0, type: 2}
   _secretPlatformArrangement: {fileID: 11400000, guid: 2330bec7437c3dd47b6ce5a009a8262b, type: 2}
   _platformColorData: {fileID: 11400000, guid: b8a769c6c8e0f194aa10dd055b4f3334, type: 2}
-  _moveHolder: {fileID: 11400000, guid: 4103c3185d1b0de438f505f9507f8170, type: 2}
+  _movesHolder: {fileID: 11400000, guid: 4103c3185d1b0de438f505f9507f8170, type: 2}

@@ -13,18 +13,19 @@ public class LevelConfig : ScriptableObject
     [SerializeField] private Arrangement _platformArrangement;
     [SerializeField] private Arrangement _secretPlatformArrangement;
     [SerializeField] private MoveColorData _platformColorData;
-    [SerializeField] private MovesHolder _moveHolder;
+    [SerializeField] private MovesHolder _movesHolder;
 
     public int LevelNumber => _levelNumber;
     public Material EnvironmentMaterial => _environmentMaterial;
     public GameObject Building => _building;
-    public int CircleStepCount => _circleStepCount;
+    public MovesHolder MovesHolder => _movesHolder;
     public Arrangement PlatformArrangement => _platformArrangement;
-    public Arrangement BowlArrangement => _moveHolder.BowlMoveArrangements[0];
+    public Arrangement BowlArrangement => _movesHolder.BowlMoveArrangements[0];
     public Arrangement SecretPlatformArrangement => _secretPlatformArrangement;
     public MoveColorData PlatformColorData => _platformColorData;
-    public MoveColorData BowlColorData => _moveHolder.BowlMoveColors[0];
-    public MoveColorData DavidColorData => _moveHolder.DavidMoveColors[0];
+    public MoveColorData BowlColorData => _movesHolder.BowlMoveColors[0];
+    public MoveColorData DavidColorData => _movesHolder.DavidMoveColors[0];
+    public int CircleStepCount => _circleStepCount;
     public int PlatformCount => _platformCount;
     public int BowlCount => _bowlCount;
 
@@ -36,22 +37,22 @@ public class LevelConfig : ScriptableObject
         TryCorrectLength(_secretPlatformArrangement, _platformCount);
         TryCorrectLength(_platformArrangement, _circleStepCount);
 
-        foreach (var oneMoveColor in _moveHolder.BowlMoveColors)
+        foreach (var oneMoveColor in _movesHolder.BowlMoveColors)
         {
             TryCorrectLength(oneMoveColor, _bowlCount);
         }
 
-        foreach (var oneMoveColor in _moveHolder.DavidMoveColors)
+        foreach (var oneMoveColor in _movesHolder.DavidMoveColors)
         {
             TryCorrectLength(oneMoveColor, _platformCount);
         }
 
-        foreach (var oneMoveArrangement in _moveHolder.BowlMoveArrangements)
+        foreach (var oneMoveArrangement in _movesHolder.BowlMoveArrangements)
         {
             TryCorrectLength(oneMoveArrangement, _circleStepCount);
         }
 
-        foreach (var isFreezedCondition in _moveHolder.DavidIsFreezedConditions)
+        foreach (var isFreezedCondition in _movesHolder.DavidIsFreezedConditions)
         {
             TryCorrectLength(isFreezedCondition, _platformCount);
         }

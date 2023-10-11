@@ -14,12 +14,12 @@ public class Platform : CircleItem
 
     private void OnEnable()
     {
-        David.ColorChanged += OnColorChanged;
+        David.ColorСhanged += OnColorChanged;
     }
 
     private void OnDisable()
     {
-        David.ColorChanged -= OnColorChanged;
+        David.ColorСhanged -= OnColorChanged;
     }
 
     private void Start()
@@ -45,6 +45,16 @@ public class Platform : CircleItem
     {
         AngleOnCircle = GetAngleOnCircle();
         TurnToCenter(AngleOnCircle);
+    }
+
+    public bool CheckColorMatch()
+    {
+        if (David.CurrentColor == CurrentColor)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void OnColorChanged(ItemColor color)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class LevelSpawner : MonoBehaviour
     [SerializeField] private BowlSpawner _bowlSpawner;
     [SerializeField] private PlatformSpawner _platformSpawner;
 
+    public event Action<MovesHolder> LevelChanged;
+
     private void Awake()
     {
         foreach (var levelConfig in _levelsConfigs)
@@ -18,6 +21,7 @@ public class LevelSpawner : MonoBehaviour
                 _environmentSetter.Set(levelConfig);
                 _bowlSpawner.Spawn(levelConfig);
                 _platformSpawner.Spawn(levelConfig);
+                LevelChanged?.Invoke(levelConfig.MovesHolder);
                 return;
             }
         }
