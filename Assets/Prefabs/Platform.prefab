@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: David
       objectReference: {fileID: 0}
+    - target: {fileID: 3914147721179976447, guid: 0f9ed22d40b2ad04784aa879c695ef17, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4377605947582716777, guid: 0f9ed22d40b2ad04784aa879c695ef17, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -305,7 +309,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3914147721179976447, guid: 0f9ed22d40b2ad04784aa879c695ef17, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
