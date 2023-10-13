@@ -16,12 +16,12 @@ public class MovesHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        _levelSpawner.LevelChanged += OnLevelChanged;
+        _levelSpawner.LevelSpawned += OnLevelSpawned;
     }
 
     private void OnDisable()
     {
-        _levelSpawner.LevelChanged -= OnLevelChanged;
+        _levelSpawner.LevelSpawned -= OnLevelSpawned;
     }
 
     public void AddColoredItem(IColoredItem item)
@@ -120,8 +120,8 @@ public class MovesHandler : MonoBehaviour
         }
     }
 
-    private void OnLevelChanged(MovesHolder movesHolder)
+    private void OnLevelSpawned(LevelConfig levelConfig)
     {
-        _movesHolder = movesHolder;
+        _movesHolder = levelConfig.MovesHolder;
     }
 }

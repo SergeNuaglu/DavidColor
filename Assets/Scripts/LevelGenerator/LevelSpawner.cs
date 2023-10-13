@@ -10,7 +10,7 @@ public class LevelSpawner : MonoBehaviour
     [SerializeField] private BowlSpawner _bowlSpawner;
     [SerializeField] private PlatformSpawner _platformSpawner;
 
-    public event Action<MovesHolder> LevelChanged;
+    public event Action<LevelConfig> LevelSpawned;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class LevelSpawner : MonoBehaviour
                 _environmentSetter.Set(levelConfig);
                 _bowlSpawner.Spawn(levelConfig);
                 _platformSpawner.Spawn(levelConfig);
-                LevelChanged?.Invoke(levelConfig.MovesHolder);
+                LevelSpawned?.Invoke(levelConfig);
                 return;
             }
         }
