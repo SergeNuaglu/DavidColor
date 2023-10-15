@@ -37,13 +37,11 @@ public class PlayScreen : Screen
     {
         base.Open();
         Opened?.Invoke();
-        Time.timeScale = 1.0f;
     }
 
     public override void Close()
     {
         base.Close();
-        Time.timeScale = 0f;
     }
 
     protected void OnHintButtonClicked()

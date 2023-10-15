@@ -5,6 +5,7 @@ public class ScreenSwitcher : MonoBehaviour
     [SerializeField] private HomeScreen _homeScreen;
     [SerializeField] private PlayScreen _playScreen;
     [SerializeField] private WinScreen _winScreen;
+    [SerializeField] private GameTracker _gameTracker;
 
     private Screen _currentScreen;
 
@@ -12,6 +13,7 @@ public class ScreenSwitcher : MonoBehaviour
     {
         _homeScreen.CloseButtonClicked += OnCloseButtonClicked;
         _playScreen.HomeButtonClicked += OnHomeButtonClicked;
+        _gameTracker.GameEnded += OnGameEnded;
     }
 
     private void Start()
@@ -23,6 +25,7 @@ public class ScreenSwitcher : MonoBehaviour
     {
         _homeScreen.CloseButtonClicked -= OnCloseButtonClicked;
         _playScreen.HomeButtonClicked -= OnHomeButtonClicked;
+        _gameTracker.GameEnded -= OnGameEnded;
     }
 
     private void OnGameEnded(GameResult gameResult)

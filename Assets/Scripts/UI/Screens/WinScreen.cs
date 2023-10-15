@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,12 +48,12 @@ public class WinScreen : Screen
         }
         else
         {
-            _gift.enabled = false;
+            _giftButton.enabled = false;
             _buttonsLayoutGroup.enabled = false;
             _nextButtonTransform = _nextButtonInitialTransform;
         }
 
-        StartCoroutine(ShowScreen());
+        Invoke(nameof(Show), _delayBeforeOpening);
     }
 
     public override void Close()
@@ -79,10 +78,8 @@ public class WinScreen : Screen
         }
     }
 
-    private IEnumerator ShowScreen()
+    private void Show()
     {
-        yield return new WaitForSeconds(_delayBeforeOpening);
-
         base.Open();
     }
 }
